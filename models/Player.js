@@ -2,19 +2,21 @@ const { model, Schema } = require('mongoose');
 
 const playerSchema = new Schema({
     _id: String,
-    username: String,
+    accountId: String,
+    playerName: String,
     level: Number,
-    avatar: Number,
+    avatarId: Number,
+    lastRefreshed: Number,
     tftMatches: [
         {
             type: Schema.Types.String,
-            ref: 'tftMatches'
+            ref: 'tftmatches'
         }
     ],
     lolMatches: [
         {
             type: Schema.Types.String,
-            ref: 'lolMatches'
+            ref: 'lolmatches'
         }
     ]
 })
